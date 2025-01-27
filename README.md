@@ -1,6 +1,10 @@
 # fruitApi
 
-This template should help get you started developing with Vue 3 in Vite.
+## Screenshots
+![Screenshot from 2025-01-25 00-11-53](https://github.com/user-attachments/assets/22d824e5-869e-4d59-9275-e0d2f2d209d8)
+![Screenshot from 2025-01-25 00-12-15](https://github.com/user-attachments/assets/3d0a4061-c4bf-4784-b922-f376298c59fb)
+![Screenshot from 2025-01-25 00-12-15](https://github.com/user-attachments/assets/bec7f8bf-9297-4e38-b504-a366541138c4)
+
 
 ## Recommended IDE Setup
 
