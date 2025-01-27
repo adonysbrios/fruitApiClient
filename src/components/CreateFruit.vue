@@ -1,9 +1,5 @@
 <template>
-    <div class="fruitsList">
-        <FruitComponent v-for="item in fruitsStore.fruits.fruits" :key="item.id" :item="item" />
-    </div>
-    <section v-show="showAdd" class="fixedBg">
-        <div class="card card-m">
+    <div class="card card-m">
             <h1>Add new fruit</h1>
             <p>Fill all fields to add a fruit</p>
             <hr>
@@ -22,30 +18,17 @@
             <p class="form-p">Fruit expire date</p>
             <input type="date" v-model="newFruit.expires">
             <button @click="fruitsStore.addFruit(newFruit); resetFruit()">Add new fruit</button>
-            <button @click="showAdd = !showAdd" class="secondary-btn">Close</button>
-        </div>
-    </section>
-    <footer>
-        <button @click="showAdd = !showAdd">+</button>
-    </footer>
+            <button @click="emit('hideCreateForm')" class="secondary-btn">Close</button>
+    </div>
 </template>
 
-<style scoped>
-button {
-    margin-top: 10px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-</style>
-
 <script setup lang="ts">
+import { reactive } from 'vue';
 import { useFruitsStore } from '@/stores/fruits';
-import { reactive, ref } from 'vue';
-import FruitComponent from './FruitComponent.vue';
+import { defineEmits } from 'vue';
 
-const showAdd = ref(false)
+const emit = defineEmits(['hideCreateForm'])
+const fruitsStore = useFruitsStore()
 
 const newFruit = reactive({
     isFruit: true,
@@ -66,9 +49,7 @@ const resetFruit = () => {
     newFruit.taste = ''
     newFruit.color = '#ffffff'
     newFruit.expires = ''
-    showAdd.value = false
+    emit('hideCreateForm')
 }
 
-const fruitsStore = useFruitsStore()
-fruitsStore.getFruits()
 </script>

@@ -68,6 +68,7 @@
 hr{
   border-color: var(--color-background-mute);
   margin-bottom: 20px;
+  margin-top: 5px;
   display: block;
 }
 
@@ -94,6 +95,7 @@ input, textarea{
 
 .secondary-btn{
   background-color: var(--color-background-soft);
+  margin-top: 3px;
   color: var(--button-color);
 }
 
